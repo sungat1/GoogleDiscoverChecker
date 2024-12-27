@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Google Discover Checker Analyzer - Optimize Your Content</title>
+    <meta name="description" content="Free tool to analyze and optimize your website for Google Discover. Check mobile-friendliness, page speed, schema markup, and content freshness.">
+    <meta name="keywords" content="Google Discover, SEO analyzer, content optimization, mobile-friendly checker">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="GoogleDiscoverChecker.com">
+    <link rel="canonical" href="https://googlediscoverchecker.com">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/nav.css">
+    <script defer>
+        function toggleNav() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="/static/logo.png" alt="Google Discover Checker Logo">
+                GoogleDiscoverChecker
+            </a>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <div class="nav-links">
+                <a href="/" class="nav-link active">Home</a>
+                <a href="/about" class="nav-link">About Us</a>
+                <a href="/contact" class="nav-link">Contact Us</a>
+                <a href="/privacy-policy" class="nav-link">Privacy Policy</a>
+                <a href="/terms-conditions" class="nav-link">Terms & Conditions</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Google Discover Analyzer</h1>
+        
+        {% if error %}
+        <div class="error-message">
+            {{ error }}
+        </div>
+        {% endif %}
+        
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter URL to Analyze" required>
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>Analysis Result for: {{ result.url }}</h2>
+            <p><strong>Mobile-Friendly:</strong> {{ result.mobile_friendly }}</p>
+            <p><strong>Page Speed Score:</strong> {{ result.page_speed }}</p>
+            <p><strong>Schema Markup:</strong> {{ result.schema_status }}</p>
+            <p><strong>Content Freshness:</strong> {{ result.freshness }}</p>
+            <p><strong>Optimized for Google Discover:</strong> {{ "Yes" if result.is_optimized else "No" }}</p>
+        </div>
+        {% endif %}
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Google Discover Checker helps you optimize your content for better visibility in Google Discover feeds.</p>
+                <div class="social-links">
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="GitHub">⌘</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-conditions">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@googlediscoverchecker.com</p>
+                <p>Support hours: Mon-Fri 9am-5pm EST</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Google Discover Checker. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

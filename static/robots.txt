@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://googlediscoverchecker.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Disallow patterns
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*
+
+# Allow specific paths explicitly
+Allow: /about
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-conditions
+
+# Cache directives
+Cache-Control: max-age=3600
