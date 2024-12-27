@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="oHhoSIx2fOgM2UAGyeXZES_eI7pH-eQWfLWC-nPl4hc" />
-    <title>Google Discover Checker- Optimize Your Content</title>
-    <meta name="description" content="Free tool to analyze and optimize your website for Google Discover. Google Discover checker, Google Discover, Check mobile-friendliness, page speed, schema markup, and content freshness.">
-    <meta name="keywords" content="Google Discover, Google Discover checker, SEO analyzer, content optimization, mobile-friendly checker">
+    <title>Google Discover Checker Analyzer - Optimize Your Content</title>
+    <meta name="description" content="Free tool to analyze and optimize your website for Google Discover. Check mobile-friendliness, page speed, schema markup, and content freshness.">
+    <meta name="keywords" content="Google Discover, Google Discover checker, Google Discover Free tool, SEO analyzer, content optimization, mobile-friendly checker">
     <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="oHhoSIx2fOgM2UAGyeXZES_eI7pH-eQWfLWC-nPl4hc" />
     <meta name="author" content="GoogleDiscoverChecker.com">
     <link rel="canonical" href="https://googlediscoverchecker.com">
     <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
@@ -42,28 +42,122 @@
     </nav>
     <div class="container">
         <h1>Google Discover Checker</h1>
-        
-        {% if error %}
-        <div class="error-message">
-            {{ error }}
-        </div>
-        {% endif %}
-        
-        <form method="POST">
-            <input type="text" name="url" placeholder="Enter URL to Analyze" required>
-            <button type="submit">Analyze</button>
-        </form>
+        <div class="tool-section">
+            <h2>Check Your Website's Discover Readiness</h2>
+            <p>Use our analyzer tool below to check if your website meets Google Discover's requirements:</p>
+            <form method="POST" class="url-form">
+                {% if error %}
+                <div class="error-message">
+                    {{ error }}
+                </div>
+                {% endif %}
+                
+                <input type="text" name="url" placeholder="Enter URL to Analyze" required>
+                <button type="submit">Analyze</button>
+            </form>
 
-        {% if result %}
-        <div class="result">
-            <h2>Analysis Result for: {{ result.url }}</h2>
-            <p><strong>Mobile-Friendly:</strong> {{ result.mobile_friendly }}</p>
-            <p><strong>Page Speed Score:</strong> {{ result.page_speed }}</p>
-            <p><strong>Schema Markup:</strong> {{ result.schema_status }}</p>
-            <p><strong>Content Freshness:</strong> {{ result.freshness }}</p>
-            <p><strong>Optimized for Google Discover:</strong> {{ "Yes" if result.is_optimized else "No" }}</p>
+            {% if result %}
+            <div class="result">
+                <h2>Analysis Result for: {{ result.url }}</h2>
+                <p><strong>Mobile-Friendly:</strong> {{ result.mobile_friendly }}</p>
+                <p><strong>Page Speed Score:</strong> {{ result.page_speed }}</p>
+                <p><strong>Schema Markup:</strong> {{ result.schema_status }}</p>
+                <p><strong>Content Freshness:</strong> {{ result.freshness }}</p>
+                <p><strong>Optimized for Google Discover:</strong> {{ "Yes" if result.is_optimized else "No" }}</p>
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
+        <div class="content">
+            <section class="blog-post">
+                <h2>Understanding Google Discover: Your Personal Content Feed</h2>
+                
+                <article>
+                    <h3>What is Google Discover?</h3>
+                    <p>Google Discover is a personalized content discovery platform that proactively serves relevant content to users without requiring a search query. Launched as an evolution of Google Feed, Discover appears on the Google mobile app's homepage and Chrome's new tab page on mobile devices.</p>
+                    <p>This AI-driven feed delivers a mix of articles, news, and visual content based on:</p>
+                    <ul>
+                        <li>Your search history</li>
+                        <li>Browser activity</li>
+                        <li>App usage patterns</li>
+                        <li>Location data</li>
+                        <li>Device information</li>
+                    </ul>
+                    <p>Unlike traditional search, Discover anticipates your interests and presents content you might like before you even ask for it.</p>
+                </article>
+
+                <article>
+                    <h3>Google Search vs. Discover: Key Differences</h3>
+                    <p>While both Google Search and Discover help users find information, they serve different purposes:</p>
+                    <div class="comparison-table">
+                        <table>
+                            <tr>
+                                <th>Google Search</th>
+                                <th>Google Discover</th>
+                            </tr>
+                            <tr>
+                                <td>Query-based: Requires user input</td>
+                                <td>Proactive: Suggests content without queries</td>
+                            </tr>
+                            <tr>
+                                <td>Intent-focused: Matches specific search terms</td>
+                                <td>Interest-based: Predicts user interests</td>
+                            </tr>
+                            <tr>
+                                <td>Time-independent: Shows relevant results regardless of age</td>
+                                <td>Freshness-focused: Prioritizes recent, trending content</td>
+                            </tr>
+                            <tr>
+                                <td>Text-centric: Primarily text-based results</td>
+                                <td>Visual-first: Emphasizes images and videos</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>For more detailed information, visit the <a href="https://developers.google.com/search/docs/appearance/google-discover" target="_blank" rel="noopener">official Google Discover documentation</a>.</p>
+                </article>
+
+                <article>
+                    <h3>How to Show Up on Google Discover</h3>
+                    <p>To increase your chances of appearing in Google Discover, follow these essential guidelines:</p>
+                    
+                    <h4>1. Create High-Quality, Engaging Content</h4>
+                    <ul>
+                        <li>Produce original, informative content</li>
+                        <li>Focus on user experience and readability</li>
+                        <li>Include compelling, high-resolution images</li>
+                        <li>Maintain E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)</li>
+                    </ul>
+
+                    <h4>2. Optimize for Mobile</h4>
+                    <ul>
+                        <li>Ensure mobile-responsive design</li>
+                        <li>Optimize page load speed</li>
+                        <li>Use AMP (Accelerated Mobile Pages) when appropriate</li>
+                        <li>Implement proper meta viewport tags</li>
+                    </ul>
+
+                    <h4>3. Use High-Quality Images</h4>
+                    <ul>
+                        <li>Use large images (1200px wide minimum)</li>
+                        <li>Implement proper image optimization</li>
+                        <li>Include relevant alt text</li>
+                        <li>Use descriptive file names</li>
+                    </ul>
+
+                    <h4>4. Technical Optimization</h4>
+                    <ul>
+                        <li>Implement proper schema markup</li>
+                        <li>Enable IndexNow for faster indexing</li>
+                        <li>Use clear URL structures</li>
+                        <li>Optimize meta titles and descriptions</li>
+                    </ul>
+
+                    <div class="pro-tip">
+                        <h4>Pro Tip: Content Freshness</h4>
+                        <p>Google Discover favors fresh content that's relevant to current trends and user interests. Regularly update your content and maintain an active publishing schedule to increase your chances of appearing in Discover feeds.</p>
+                    </div>
+                </article>
+            </section>
+        </div>
     </div>
     <footer class="footer">
         <div class="footer-content">
